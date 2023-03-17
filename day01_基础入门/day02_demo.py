@@ -1,4 +1,4 @@
-# 编写一个类，实现一个静态方法，该方法返回两个数的和。
+# 1、编写一个类，实现一个静态方法，该方法返回两个数的和。
 class Parents_Sum:
     # 初始化函数
     def __init__(self,a,b):
@@ -19,12 +19,12 @@ class Parents_Sum:
         print(a+b)
 
 # 创建类对象
-sum = Parents_Sum(10, 20)
+sum1 = Parents_Sum(10, 20)
 print('\n')
 
 # 用类对象调用方法
 print('我是用创建的类对象调用的类方法，结果为：')
-sum.Son_sum(10, 2)
+sum1.Son_sum(10, 2)
 print('\n')
 
 # 直接使用类名.方法调用
@@ -32,7 +32,7 @@ print('我是用类名.类方法调用传参获得的结果为：')
 Parents_Sum.Son_sum(9,15)
 print('\n')
 
-# 编写一个类，实现一个类方法，该方法返回该类的类名。
+# 2、编写一个类，实现一个类方法，该方法返回该类的类名。
 class MyClass:
     @classmethod
     def getName(cls):
@@ -43,7 +43,7 @@ print('我是用classmethod内置方法获得方法名，该方法不需要实�
 print(MyClass.getName())
 print('\n')
 
-# 编写一个类，实现一个实例方法，该方法接受一个参数并返回该参数的平方。
+# 3、编写一个类，实现一个实例方法，该方法接受一个参数并返回该参数的平方。
 class getPow:
     def res_Pow(self):
         # 通过内置函数计算平方
@@ -52,7 +52,7 @@ class getPow:
 print('通过类方法调用计算出平方，结果为：')
 print(getPow.res_Pow(12))
 
-# 编写一个类，实现一个静态方法，该方法接受一个列表并返回该列表中的最大值。
+# 4、编写一个类，实现一个静态方法，该方法接受一个列表并返回该列表中的最大值。
 class num_Max:
     def getMax(self):
         # 使用列表max求最大值，并返回
@@ -62,16 +62,31 @@ numList = [10,30,20,21]
 print('列表最大值为:',num_Max.getMax(numList))
     
 
-# 编写一个类，实现一个类方法，该方法接受一个整数n并返回一个n行n列的乘法表。
+# 5、编写一个类，实现一个类方法，该方法接受一个整数n并返回一个n行n列的乘法表。
 
-# 编写一个类，实现一个实例方法，该方法接受一个字符串并返回该字符串的反转字符串。
+class MultiplicationTable:
+    def __init__(self, n):
+        self.n = n
+    
+    def print_table(self):
+        # 行
+        for i in range(1, self.n+1):
+            # 列
+            for j in range(1, i+1):
+                print(f"{j}*{i}={i * j}\t", end='')
+            print()
+
+table = MultiplicationTable(9)
+table.print_table()
+
+# 6、编写一个类，实现一个实例方法，该方法接受一个字符串并返回该字符串的反转字符串。
 class Name_Str:
     def get_Str(self):
         return self[::-1]
     
 print(Name_Str.get_Str('happy'))
 
-# 编写一个类，实现一个静态方法，该方法接受一个列表并返回该列表中的所有偶数。
+# 7、编写一个类，实现一个静态方法，该方法接受一个列表并返回该列表中的所有偶数。
 class myEven:
     @staticmethod
     def get_even(a):
@@ -91,34 +106,124 @@ class myEven:
 Even_list = [10,20,30,5]
 myEven.get_even(Even_list)
 
-# 编写一个类，实现一个类方法，该方法接受一个整数n并返回一个长度为n的斐波那契数列。
+# 8、编写一个类，实现一个类方法，该方法接受一个整数n并返回一个长度为n的斐波那契数列。
+class Fibonacci:
+    def __init__(self, n):
+        self.n = n
+    
+    def __iter__(self):
+        self.a, self.b = 0, 1
+        self.count = 0
+        return self
+    
+    def __next__(self):
+        # sourcery skip: remove-unnecessary-else, swap-if-else-branches
+        if self.count < self.n:
+            result = self.a
+            self.a, self.b = self.b, self.a + self.b
+            self.count += 1
+            return result
+        else:
+            raise StopIteration
+        
+fib = Fibonacci(10)
+for num in fib:
+    print(num)
 
 # 编写一个类，实现一个实例方法，该方法接受一个整数n并返回该整数的阶乘。
+class Factorial:
 
+
+    def compute(self, n):
+
+        if n < 0:
+            raise ValueError("The input must be a non-negative integer.")
+        result = 1
+        for i in range(1, n+1):
+            result *= i
+        return result
+    
+    
 # 编写一个类，实现一个静态方法，该方法接受两个列表并返回两个列表的交集。
+class Intersection:
+    @staticmethod
+    def get_Intersection(list1,list2):
+        return [item for item in list1 if item in list2]
 
+list1 = [10,20,30,50]
+list2 = [10,20,30]
+# 调用类方法
+Intersection.get_Intersection(list1,list2)
 
 # 编写一个Python类，表示一个矩形，包括求面积和周长的方法。
+class Rectangle:
+    def __init__(self,high,width):
+        self.high = high
+        self.width = width
+
+    # 求面积
+    def area(self):
+        # 面积公式：长 * 宽
+        return self.high * self.width
+
+
+    # 求周长
+    def perimeter(self):
+        return 2 * (self.high + self.width)
+    
+# 调用类求面积
+rect = Rectangle(5,3)
+print(rect.area())
+print(rect.perimeter())
 
 # 编写一个Python类，表示一个人，包括姓名、性别、年龄等属性以及一个打印个人信息的方法。
+class perSon:
+    
+    def __init__(self,name,sex,age) -> '函数初始化' :
+        self.name = name
+        self.sex = sex
+        self.age = age
+    
+    def print_info(self):
+        print(f'他叫{self.name},性别{self.sex},今年{self.age}')
+
+person = perSon('张三','男',18)
+person.print_info()
+
 
 # 编写一个Python类，表示一个汽车，包括品牌、型号、颜色等属性以及一个加速度的方法。
+class car:
+    def __init__(self,brand,model,color,seep):
+        self.brand = brand
+        self.model = model
+        self.color = color
+        self.seep = seep
+
+    def accelerate(self,acceleration):
+        self.seep += acceleration
+        print(f'{self.color}{self.brand}{self.model}加速到了{self.seep}km/h')
+
+
+car = car('白色','保时捷','帕拉梅拉xp',20)
+car.accelerate(20)
+
 
 # 编写一个Python类，表示一个学生，包括姓名、学号、成绩等属性以及一个求平均成绩的方法。
+class Student:
+    def __init__(self, name, student_id, grades):
+        self.name = name
+        self.student_id = student_id
+        self.grades = grades
+    
+    def average_grade(self):
+        if len(self.grades) == 0:
+            return None
+        
+        return sum(self.grades) / len(self.grades)
 
-# 编写一个Python类，表示一个动物，包括种类、食性、寿命等属性以及一个判断是否为食肉动物的方法。
-
-# 编写一个Python类，表示一个图形，包括面积、周长等属性以及一个绘制图形的方法。
-
-# 编写一个Python类，表示一个用户，包括用户名、密码等属性以及一个验证用户信息的方法。
-
-# 编写一个Python类，表示一个银行账户，包括账户余额、账户号码等属性以及一个存款、取款的方法。
-
-# 编写一个Python类，表示一个文件，包括文件名、大小等属性以及一个读取、写入文件的方法。
-
-# 编写一个Python类，表示一个点，包括x、y坐标等属性以及一个计算两个点之间距离的方法。
-
-
+s = Student("John Doe", 12345, [90, 85, 95])
+avg_grade = s.average_grade()
+print(avg_grade)
 
 '''
 面向对象的知识点：
