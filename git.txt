@@ -1,0 +1,8 @@
+git pull    拉代码
+
+
+git add .    添加
+
+git commit -m "消息"   提交
+
+git push   提交
