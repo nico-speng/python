@@ -130,7 +130,7 @@ fib = Fibonacci(10)
 for num in fib:
     print(num)
 
-# 编写一个类，实现一个实例方法，该方法接受一个整数n并返回该整数的阶乘。
+# 9、编写一个类，实现一个实例方法，该方法接受一个整数n并返回该整数的阶乘。
 class Factorial:
 
 
@@ -144,7 +144,7 @@ class Factorial:
         return result
     
     
-# 编写一个类，实现一个静态方法，该方法接受两个列表并返回两个列表的交集。
+#10、 编写一个类，实现一个静态方法，该方法接受两个列表并返回两个列表的交集。
 class Intersection:
     @staticmethod
     def get_Intersection(list1,list2):
@@ -155,7 +155,7 @@ list2 = [10,20,30]
 # 调用类方法
 Intersection.get_Intersection(list1,list2)
 
-# 编写一个Python类，表示一个矩形，包括求面积和周长的方法。
+# 11、编写一个Python类，表示一个矩形，包括求面积和周长的方法。
 class Rectangle:
     def __init__(self,high,width):
         self.high = high
@@ -176,7 +176,7 @@ rect = Rectangle(5,3)
 print(rect.area())
 print(rect.perimeter())
 
-# 编写一个Python类，表示一个人，包括姓名、性别、年龄等属性以及一个打印个人信息的方法。
+# 12、编写一个Python类，表示一个人，包括姓名、性别、年龄等属性以及一个打印个人信息的方法。
 class perSon:
     
     def __init__(self,name,sex,age) -> '函数初始化' :
@@ -191,7 +191,7 @@ person = perSon('张三','男',18)
 person.print_info()
 
 
-# 编写一个Python类，表示一个汽车，包括品牌、型号、颜色等属性以及一个加速度的方法。
+# 13、编写一个Python类，表示一个汽车，包括品牌、型号、颜色等属性以及一个加速度的方法。
 class car:
     def __init__(self,brand,model,color,seep):
         self.brand = brand
@@ -208,7 +208,7 @@ car = car('白色','保时捷','帕拉梅拉xp',20)
 car.accelerate(20)
 
 
-# 编写一个Python类，表示一个学生，包括姓名、学号、成绩等属性以及一个求平均成绩的方法。
+# 14、编写一个Python类，表示一个学生，包括姓名、学号、成绩等属性以及一个求平均成绩的方法。
 class Student:
     def __init__(self, name, student_id, grades):
         self.name = name

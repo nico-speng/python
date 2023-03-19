@@ -1,0 +1,8 @@
+{"id": "1001", "name": "\u674e\u767d", "english": 96, "python": 45, "java": 65}
+{"id": "1002", "name": "\u6797\u5915", "english": 96, "python": 45, "java": 45}
+{"id": "1003", "name": "\u5f20\u7a00\u54f2", "english": 78, "python": 96, "java": 45}
+{"id": "1004", "name": "\u674e\u56db", "english": 96, "python": 86, "java": 45}
+{"id": "1005", "name": "\u5f20\u4e09", "english": 96, "python": 84, "java": 73}
+{"id": "1006", "name": "\u6797\u5fb7\u65b0", "english": 72, "python": 64, "java": 14}
+{"id": "64", "name": "\u738b\u7fb2\u4e4b", "english": 93, "python": 95, "java": 97}
+{"id": "1007", "name": "\u5f20\u827a\u5174", "english": 75, "python": 98, "java": 74}
