@@ -10,3 +10,12 @@
 爬取社交网络信息并分析：爬取某个社交网络平台的用户信息和关系信息，分析用户之间的社交网络结构、关系强度等指标，并绘制相应的图表。
 
 '''
+
+import requests
+
+# 获取URL地址
+url = 'http://lishi.tianqi.com/'
+
+# 发送请求
+re = requests.get(url)
+print(re)
