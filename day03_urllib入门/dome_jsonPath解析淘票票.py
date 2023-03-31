@@ -17,11 +17,11 @@ content = response.read().decode('utf-8')
 content = content.split('(')[1].split(')')[0]
 
 
-# try:
-#     with open('淘票票_jsonPath.json','w',encoding='utf-8') as fp:
-#         fp.write(content)
-# except Exception as e:
-#     print(f'爬取数据失败，{e}')
+try:
+    with open('淘票票_jsonPath.json','w',encoding='utf-8') as fp:
+        fp.write(content)
+except Exception as e:
+    print(f'爬取数据失败，{e}')
 
 import json
 import jsonpath
