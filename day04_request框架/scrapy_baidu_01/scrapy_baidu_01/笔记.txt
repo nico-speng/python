@@ -1,0 +1,14 @@
+1、创建爬虫的项目：
+scrapy startproject    项目名称
+注意：项目的名字不允许包含数字开头  也不允许包含汉字
+
+2、创建爬虫文件:
+要在spiders文件夹中去创建爬虫文件
+cd 项目的名字\项目的文字\spiders
+cd \day04_request框架\scrapy_baidu_01\scrapy_baidu_01\spiders
+
+scrapy genspider 爬虫文件的名字 要爬取网页
+scrapy genspider baidu.py www.baidu.com
+
+3、运行爬虫代码
+scrapy crawl baidu
