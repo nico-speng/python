@@ -1,4 +1,4 @@
-# Scrapy settings for scrapy_58tc_02 project
+# Scrapy settings for scrapy_carhome_02 project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "scrapy_58tc_02"
+BOT_NAME = "scrapy_carhome_02"
 
-SPIDER_MODULES = ["scrapy_58tc_02.spiders"]
-NEWSPIDER_MODULE = "scrapy_58tc_02.spiders"
+SPIDER_MODULES = ["scrapy_carhome_02.spiders"]
+NEWSPIDER_MODULE = "scrapy_carhome_02.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "scrapy_58tc_02 (+http://www.yourdomain.com)"
+#USER_AGENT = "scrapy_carhome_02 (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "scrapy_58tc_02.middlewares.Scrapy58Tc02SpiderMiddleware": 543,
+#    "scrapy_carhome_02.middlewares.ScrapyCarhome02SpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "scrapy_58tc_02.middlewares.Scrapy58Tc02DownloaderMiddleware": 543,
+#    "scrapy_carhome_02.middlewares.ScrapyCarhome02DownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = True
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    "scrapy_58tc_02.pipelines.Scrapy58Tc02Pipeline": 300,
+#    "scrapy_carhome_02.pipelines.ScrapyCarhome02Pipeline": 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
