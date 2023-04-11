@@ -1,4 +1,4 @@
-# Scrapy settings for scrapy_dangdang_03 project
+# Scrapy settings for scrapy_dushu_04 project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = "scrapy_dangdang_03"
+BOT_NAME = "scrapy_dushu_04"
 
-SPIDER_MODULES = ["scrapy_dangdang_03.spiders"]
-NEWSPIDER_MODULE = "scrapy_dangdang_03.spiders"
+SPIDER_MODULES = ["scrapy_dushu_04.spiders"]
+NEWSPIDER_MODULE = "scrapy_dushu_04.spiders"
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = "scrapy_dangdang_03 (+http://www.yourdomain.com)"
+#USER_AGENT = "scrapy_dushu_04 (+http://www.yourdomain.com)"
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = True
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = True
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    "scrapy_dangdang_03.middlewares.ScrapyDangdang03SpiderMiddleware": 543,
+#    "scrapy_dushu_04.middlewares.ScrapyDushu04SpiderMiddleware": 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    "scrapy_dangdang_03.middlewares.ScrapyDangdang03DownloaderMiddleware": 543,
+#    "scrapy_dushu_04.middlewares.ScrapyDushu04DownloaderMiddleware": 543,
 #}
 
 # Enable or disable extensions
@@ -60,13 +60,18 @@ ROBOTSTXT_OBEY = True
 #    "scrapy.extensions.telnet.TelnetConsole": None,
 #}
 
+DB_HOST = '127.0.0.1'
+DB_PORT = 3306
+DB_USER = 'root'
+DB_PASSWROD = '1234'
+DB_NAME = 'spider01'
+DB_CHARSET = 'utf8'
+
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
-    # 管道可以有很多个 那么管道是有优先级的  优先级范围是1-100 值越小优先级越高
-   "scrapy_dangdang_03.pipelines.ScrapyDangdang03Pipeline": 300,
-   "scrapy_dangdang_03.pipelines.DangDownloadPipeline": 301,
-   
+   "scrapy_dushu_04.pipelines.ScrapyDushu04Pipeline": 300,
+   "scrapy_dushu_04.pipelines.MysqlPipeline": 301,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
