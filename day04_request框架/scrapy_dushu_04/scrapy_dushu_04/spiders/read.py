@@ -7,7 +7,7 @@ from scrapy_dushu_04.items import ScrapyDushu04Item
 class ReadSpider(CrawlSpider):
     name = "read"
     allowed_domains = ["www.dushu.com"]
-    start_urls = ["https://www.dushu.com/book/1188_1.html"]
+    start_urls = ["https://www.dushu.com/book/1188.html"]
 
     rules = (Rule(LinkExtractor(allow=r"/book/1188_\d+\.html"), callback="parse_item", follow=True),)
 
