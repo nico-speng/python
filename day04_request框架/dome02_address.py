@@ -69,7 +69,7 @@ payload = {
 }
 
 # 发送 POST 请求
-response = requests.post(url,headers=headers,data=payload)
+response = requests.post(url,headers=headers,data=json.dumps(payload))
 
 # 获取响应内容
 content = response.content.decode()
