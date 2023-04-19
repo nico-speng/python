@@ -79,5 +79,60 @@ pd.set_option('display.unicode.east_asian_width',True)
 df = pd.DataFrame(data=data,index=index,columns=columns)
 
 df.columns = ['数学.上','英语.上','语文.上']
+print(df)
+df.rename(columns={'数学.上':'数学','英语.上':'英语','语文.上':'语文'},inplace=True)
+print(df)
 
+# 直接修改行索引名称
+df.index=list('123')
+print(df)
+
+df.rename({'1':'张三','2':'李四','3':'王五'},inplace=True)
+print(df)
+
+# 修改一整行
+df.loc['张三'] = [100,100,99]
+print(df)
+# 修改第0列的所有成绩
+df.iloc[0,:] = [99,99,99]
+print(df)
+# 修改所有数学的成绩
+df.loc[:,'数学'] = [100,87,99]
+print(df)
+# 修改整列数据
+df.iloc[:,0] = 90
+print(df)
+
+# 修改某一处的成绩
+df.loc['李四','语文'] = 69
+print(df)
+
+df.iloc[1,1] = 55
+print(df)
+
+# 删除数据
+
+'''
+参数说明:
+labels:表示行标签或列标签
+axis:axis=0表示按行删除 axis=1表示按列删除
+index :删除行,默认值为None
+columns:删除列，默认值为None
+inplace:对原数组作出修改并返回一个新数组。默认值为False，如果值为True,那么原数组直接就将被替换
+'''
+# 删除列的数据
+# df.drop(['数学'],axis=1,inplace=True)
+# df.drop(columns='数学',axis=1,inplace=True)
+df.drop(labels='数学',axis=1,inplace=True)
+# print(df)
+
+# 删除行的数据
+# df.drop(['张三'],axis=0,inplace=True)
+# df.drop(index='张三',axis=0,inplace=True)
+df.drop(labels='张三',axis=0,inplace=True)
+print(df)
+
+# 带条件的删除，删除数学成绩小于60
+print(df[df['英语']<60].index[0])
+df.drop(df[df['英语']<60].index[0],inplace=True)
 print(df)
