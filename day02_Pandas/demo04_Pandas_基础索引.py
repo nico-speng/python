@@ -45,3 +45,12 @@ print(df.reindex(columns=['数学','语文','英语','历史','化学']))
 index = ['msb1001','msb1002','msb1003','msb1004','msb1005','msb1006']
 columns = ['数学','语文','英语','历史','化学','物理']
 print(df.reindex(index=index,columns=columns))
+
+# 设置某列为行索引
+df = pd.read_excel('msb课程记录.xlsx')
+# df = df.set_index(['买家会员名'])
+print(df)
+
+# 数据清洗后重新设置连续索引
+df = df.dropna().reset_index(drop=True)
+print(df)
