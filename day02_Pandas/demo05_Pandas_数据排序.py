@@ -1,3 +1,4 @@
+# sourcery skip: replace-apply-with-numpy-operation
 import pandas as pd
 
 # 数据排序和排名
@@ -136,3 +137,76 @@ print('---------------')
 # 还可以使用自定义函数实现保留小数位置
 df3 = df.applymap(lambda x : '{:.2f}'.format(x))
 print(df3)
+
+
+# 设置百分比
+print('-------设置百分比--------')
+
+df = pd.read_excel('格式化数据.xlsx')
+print(df)
+
+print('---------------')
+df['百分比'] = df['A1'].apply(lambda x : format(x,'.0%'))   # 对A1列进行设置百分比
+print(df)
+
+print('---------------')
+df['百分比'] = df['A1'].apply(lambda x : format(x,'.2%'))   # 对A1列进行设置百分比
+print(df)
+
+# map()函数
+print('-------map()函数设置百分比--------')
+df['百分比'] = df['A1'].map(lambda x : format(x,'.2%'))   # 对A1列进行设置百分比
+print(df)
+
+# 设置千位分隔符
+print('-------设置千位分隔符--------')
+df = pd.read_excel('msb课程记录.xlsx')
+print(df)
+print('---------------')
+df['买家实际支付金额'] = df['买家实际支付金额'].apply(lambda x : format(int(x),','))
+print(df)
+print(df.info())
+
+# apply(),map(),applymap()的区别
+#apply()可以在Series，对Series的每一个元素都执行一次函数，也可以在DataFrame中起作用，对DataFrame中的某一行或某一列执行函数
+s = pd.Series(data=[10,20,30,40],index=['a','b','c','d'])
+print(s)
+print('---------------')
+s=s.apply(lambda x : x+10)
+print(s)
+
+print('---------------')
+data = [[76,90,82,74],[84,78,91,71]]
+columns = ['A','B','C','D']
+index=['a','b']
+df = pd.DataFrame(data=data,columns=columns,index=index)
+print(df)
+
+print('---------------')
+df2 = df.apply(lambda x : x.sum(),axis=0)
+print(df2)
+
+# map只能应用在Series的每个元素上
+df = pd.DataFrame(data=['男','女','男','男'],columns=['性别'],index=['张三','王五','李四','陈六'])
+print(df)
+
+def gender(g):
+    return 0 if g == '男' else 1
+
+# map()的参数可传递一个函数 也可以传递一个字典
+df2 = df['性别'].map(gender)
+print(df2)
+
+df2 = df['性别'].map({'男':0,'女':1})
+print(df2)
+
+# applymap()将函数应用在DataFrame每个元素上
+data = [[76,90,82,74],[84,78,91,71]]
+columns = ['A','B','C','D']
+index=['a','b']
+df = pd.DataFrame(data=data,columns=columns,index=index)
+print(df)
+
+print('---------------')
+df=df.applymap(lambda x : x+10)
+print(df)
